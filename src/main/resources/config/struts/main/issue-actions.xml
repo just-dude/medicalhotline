@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="issue-actions" namespace="/" extends="medical-hotline-default">
+
+        <action name="add-issueaction-*" method="{1}" class="controller.struts.action.main.issueActions.AddIssueActionCAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.addIssueAction</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.addIssueAction</result>
+
+            <result name="error-html-full-page" type="tiles">main.fullPage.addIssueAction</result>
+            <result name="business-rule-violation-html-full-page" type="tiles">main.fullPage.addIssueAction</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">main.fullPage.addIssueAction</result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">main.fullPage.addIssueAction</result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.addIssueAction
+            </result>
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="edit-issueaction-*" method="{1}" class="controller.struts.action.main.issueActions.EditIssueActionCAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.editIssueAction</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.editIssueAction</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.editIssueAction</result>
+
+            <result name="error-html-full-page" type="tiles">main.fullPage.editIssueAction</result>
+            <result name="business-rule-violation-html-full-page" type="tiles">main.fullPage.editIssueAction</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">main.fullPage.editIssueAction</result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">main.fullPage.editIssueAction</result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.editIssueAction
+            </result>
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="issueaction-management" class="controller.struts.action.main.issueActions.IssueActionManagemenCAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.managementIssueAction</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.managementIssueAction</result>
+            <result name="business-rule-violation-html-full-page" type="tiles">main.fullPage.managementIssueAction</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">main.fullPage.managementIssueAction</result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">main.fullPage.managementIssueAction</result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.managementIssueAction
+            </result>
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+    </package>
+</struts>

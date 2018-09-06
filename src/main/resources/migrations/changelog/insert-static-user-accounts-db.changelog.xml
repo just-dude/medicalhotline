@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="insert-static-users" author="SuslovAI">
+
+        <insert tableName="UserAccounts"> <!-- 123123 -->
+            <column name="id" value="1"/>
+            <column name="login" value="admin"/>
+            <column name="hashedPassword" value="wqqTAGvtnnpirAuyjl/h/AMVsQrBPjxIm0SBl/MlO1I="/>
+            <column name="salt" value="KTjUi8L7k7gU74a7H+Gaaw=="/>
+            <column name="name" value="Администратор"/>
+            <column name="surname" value=""/>
+            <column name="patronymic" value=""/>
+            <column name="email" value="admin@email.com"/>
+            <column name="userGroup" value="Admin"/>
+        </insert>
+
+        <insert tableName="UserAccounts">
+            <column name="id" value="2"/>
+            <column name="login" value="shiftSupervisor"/>
+            <column name="hashedPassword" value="wqqTAGvtnnpirAuyjl/h/AMVsQrBPjxIm0SBl/MlO1I="/>
+            <column name="salt" value="KTjUi8L7k7gU74a7H+Gaaw=="/>
+            <column name="name" value="смены"/>
+            <column name="surname" value="Начальник"/>
+            <column name="patronymic" value=""/>
+            <column name="email" value="shiftSupervisor@email.com"/>
+            <column name="userGroup" value="ShiftSupervisor"/>
+        </insert>
+
+        <insert tableName="UserAccounts">
+            <column name="id" value="3"/>
+            <column name="login" value="operator"/>
+            <column name="hashedPassword" value="wqqTAGvtnnpirAuyjl/h/AMVsQrBPjxIm0SBl/MlO1I="/>
+            <column name="salt" value="KTjUi8L7k7gU74a7H+Gaaw=="/>
+            <column name="name" value="Оператор"/>
+            <column name="surname" value=""/>
+            <column name="patronymic" value=""/>
+            <column name="email" value="operator@email.com"/>
+            <column name="userGroup" value="Operator"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

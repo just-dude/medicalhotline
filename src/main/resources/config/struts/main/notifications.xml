@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="notifications" namespace="/" extends="medical-hotline-default">
+
+        <action name="notifications-management"
+                class="controller.struts.action.main.notifications.NotificationsManagementAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.notificationsManagement</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.notificationsManagement</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.notificationsManagement
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.notificationsManagement
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.notificationsManagement
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+
+    </package>
+</struts>

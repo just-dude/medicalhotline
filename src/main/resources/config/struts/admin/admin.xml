@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!-- 
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+    <package name="admin-main" namespace="/admin" extends="medical-hotline-default">
+        <action name="index" class="controller.struts.action.admin.AdminMainAction">
+            <result name="success-html-full-page" type="tiles">admin.fullPage.adminMain</result>
+            <result name="error-html-full-page" type="tiles">admin.fullPage.defaultError</result>
+        </action>
+    </package>
+</struts>

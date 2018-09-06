@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!-- 
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+    <package name="authentication" namespace="/" extends="medical-hotline-default">
+        <action name="login-*" method="{1}" class="controller.struts.action.authentication.LoginAction">
+            <result name="success-html-full-page" type="redirectAction">index</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.login</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.login</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.login</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.login
+            </result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="logout" class="controller.struts.action.authentication.LogoutAction">
+            <result name="success-html-full-page" type="redirectAction">login-input</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+    </package>
+</struts>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    <test_medical_hotline.Appeals contactPhoneNumber="+7(999)999-99-98" name="name-n" surname="surname-n" patronymic="[null]" omsPolicyNumber="[null]" smoId="[null]"
+                                  placeOfLiving="[null]" state="Filling" causeOfTransitionToFinalState="[null]"  creatorId="1" createdDateTime="2016-01-01 00:00:00"  isSoftDeleted="false" />
+    <test_medical_hotline.Appeals contactPhoneNumber="+7(999)999-99-99" name="name" surname="surname" patronymic="[null]" omsPolicyNumber="[null]" smoId="[null]"
+                                  placeOfLiving="[null]"
+                                  state="OnTheGo"  causeOfTransitionToFinalState="[null]" creatorId="1"
+                                  createdDateTime="2016-01-01 00:00:00"  isSoftDeleted="false" />
+
+    <test_medical_hotline.Issues text="some issue" state="OnTheGo"  causeOfTransitionToFinalState="[null]"  isSoftDeleted="false" appealId="1"  issueCategoryId="1"/>
+
+    <test_medical_hotline.Issues text="Very seriosly issue 1" state="PrimaryProcessing"  causeOfTransitionToFinalState="[null]"  isSoftDeleted="false" appealId="2" issueCategoryId="1"/>
+    <test_medical_hotline.Issues text="Very seriosly issue 2" state="PrimaryProcessing"  causeOfTransitionToFinalState="[null]"  isSoftDeleted="false" appealId="2" issueCategoryId="1"/>
+
+</dataset>

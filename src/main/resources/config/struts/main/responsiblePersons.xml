@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="responsiblePersons" namespace="/" extends="medical-hotline-default">
+
+        <action name="add-responsible-person-*" method="{1}" class="controller.struts.action.main.responsiblePersons.AddResponsiblePersonAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.addResponsiblePerson</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.addResponsiblePerson</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.addResponsiblePerson</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.addResponsiblePerson</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.addResponsiblePerson
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.addResponsiblePerson
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.addResponsiblePerson
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="edit-responsible-person-*" method="{1}" class="controller.struts.action.main.responsiblePersons.EditResponsiblePersonAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.editResponsiblePerson</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.editResponsiblePerson</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.editResponsiblePerson</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.editResponsiblePerson</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.editResponsiblePerson
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.editResponsiblePerson
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.editResponsiblePerson
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="remove-responsible-person" class="controller.struts.action.main.responsiblePersons.RemoveResponsiblePersonAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">responsible-persons-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+                <param name="organizationId">%{#parameters.organizationId}</param>
+            </result>
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">responsible-persons-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+                <param name="organizationId">%{#parameters.organizationId}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">responsible-persons-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+                <param name="organizationId">%{#parameters.organizationId}</param>
+            </result>
+            <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">responsible-persons-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+                <param name="organizationId">%{#parameters.organizationId}</param>
+            </result>
+            <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">responsible-persons-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+                <param name="organizationId">%{#parameters.organizationId}</param>
+            </result>
+            <result name="unexpected-error-html-full-page" type="redirectAction">
+                <param name="actionName">responsible-persons-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+                <param name="organizationId">%{#parameters.organizationId}</param>
+            </result>
+        </action>
+
+        <action name="responsible-persons-management"
+                class="controller.struts.action.main.responsiblePersons.ResponsiblePersonsManagementAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.responsiblePersonsManagement</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.responsiblePersonsManagement</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.responsiblePersonsManagement
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.responsiblePersonsManagement
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.responsiblePersonsManagement
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+
+    </package>
+</struts>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="helpinfos" namespace="/" extends="medical-hotline-default">
+
+        <action name="save-helpinfo-*" method="{1}" class="controller.struts.action.main.helpInfos.SaveHelpInfoAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfo-management</param>
+                <param name="issueTypeId">%{issueTypeId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.saveHelpInfo</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.saveHelpInfo</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.saveHelpInfo</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.saveHelpInfo
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.saveHelpInfo
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.saveHelpInfo
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="remove-helpinfo" class="controller.struts.action.main.helpInfos.RemoveHelpInfoAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="unexpected-error-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+        </action>
+
+        <action name="helpinfo-management" class="controller.struts.action.main.helpInfos.HelpInfoManagementAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.helpInfoManagement</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.helpInfoManagement</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.helpInfoManagement</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.helpInfoManagement</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.helpInfoManagement
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfoManagement
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfoManagement
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="helpinfos-page"
+                class="controller.struts.action.main.helpInfos.HelpInfosPageAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.helpInfosPage</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.helpInfosPage</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.helpInfosPage
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfosPage
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfosPage
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+
+    </package>
+</struts>

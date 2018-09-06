@@ -1,0 +1,341 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!--        -->
+    <!-- Common -->
+    <!--        -->
+
+    <definition name="main.fullPage" template="/WEB-INF/view/tiles/template/mainTemplate.jsp">
+        <put-attribute name="commonAssets" value="/WEB-INF/view/main/common/html/commonAssets.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/common/html/customDefaultAssets.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/view/main/common/html/header.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/common/html/emptyBreadCrumbs.jsp"/>
+        <put-attribute name="prevActionStatusMessage"
+                       value="/WEB-INF/view/main/common/html/prevActionStatusMessage.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/view/main/common/html/menu.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/view/main/common/html/footer.jsp"/>
+    </definition>
+
+    <definition name="admin.fullPage" template="/WEB-INF/view/tiles/template/adminTemplate.jsp">
+        <put-attribute name="commonAssets" value="/WEB-INF/view/admin/common/html/commonAssets.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/admin/common/html/customDefaultAssets.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/view/admin/common/html/header.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/common/html/emptyBreadCrumbs.jsp"/>
+        <put-attribute name="prevActionStatusMessage"
+                       value="/WEB-INF/view/admin/common/html/prevActionStatusMessage.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/view/admin/common/html/menu.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/view/admin/common/html/footer.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.defaultError" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/common/html/defaultErrorTitle.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/common/html/defaultErrorContent.jsp"/>
+    </definition>
+
+    <definition name="admin.fullPage.defaultError" extends="admin.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/admin/common/html/defaultErrorTitle.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/common/html/defaultErrorContent.jsp"/>
+    </definition>
+
+
+
+    <definition name="admin.fullPage.resourceNotExistsError" extends="admin.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/admin/common/html/resourceNotExistsErrorTitle.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/common/html/resourceNotExistsErrorContent.jsp"/>
+    </definition>
+
+    <definition name="admin.fullPage.authorizationError" extends="admin.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/admin/common/html/authorizationErrorTitle.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/common/html/authorizationErrorContent.jsp"/>
+    </definition>
+    <!--                                     -->
+    <!-- Site Management Panel (Admin panel) -->
+    <!--                                     -->
+    <definition name="admin.fullPage.adminMain" extends="admin.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/admin/admin/html/adminMainTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/admin/admin/html/adminBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/admin/html/adminMainContent.jsp"/>
+    </definition>
+
+    <!-- Users -->
+
+    <definition name="admin.fullPage.addUser" extends="admin.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/admin/userAccounts/html/addFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/admin/userAccounts/html/addFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/userAccounts/html/addFormContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/admin/userAccounts/html/addFormAssets.jsp"/>
+    </definition>
+
+    <definition name="admin.fullPage.editUser" extends="admin.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/admin/userAccounts/html/editFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/admin/userAccounts/html/editFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/userAccounts/html/editFormContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/admin/userAccounts/html/editFormAssets.jsp"/>
+    </definition>
+
+    <definition name="admin.fullPage.usersManagement" extends="admin.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/admin/userAccounts/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/admin/userAccounts/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/userAccounts/html/managementContent.jsp"/>
+    </definition>
+
+    <!--               -->
+    <!--Authentication -->
+    <!--               -->
+    <definition name="main.fullPage.login" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/authentication/html/authenticationFormTitle.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/authentication/html/authenticationFormContent.jsp"/>
+        <put-attribute name="prevActionStatusMessage"  value=""/>
+        <put-attribute name="breadCrumbs" value=""/>
+    </definition>
+
+
+    <!--          -->
+    <!--Main Site -->
+    <!--          -->
+
+    <definition name="main.fullPage.index" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/html/indexTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/html/indexBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/html/indexContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.authorizationError" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/common/html/authorizationErrorTitle.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/common/html/authorizationErrorContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.error" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/common/html/errorPageTitle.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/common/html/errorPageContent.jsp"/>
+    </definition>
+
+    <!--               -->
+    <!--    Appeals    -->
+    <!--               -->
+
+    <definition name="main.fullPage.addAppealMainInfo" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/appeals/html/addMainInfoFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/appeals/html/addMainInfoFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/appeals/html/addMainInfoFormContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/appeals/html/addMainInfoFormAssets.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.editAppealMainInfo" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/appeals/html/editMainInfoFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/appeals/html/editMainInfoFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/appeals/html/editMainInfoFormContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/appeals/html/editMainInfoFormAssets.jsp"/>
+    </definition>
+
+
+    <definition name="main.fullPage.appealManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/appeals/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/appeals/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/appeals/html/managementContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/appeals/html/managementAssets.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.appealsPage" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/appeals/html/pageTitle.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/appeals/html/pageAssets.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/appeals/html/pageBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/appeals/html/pageContent.jsp"/>
+    </definition>
+
+
+    <definition name="main.fullPage.addIssue" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issues/html/addFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issues/html/addFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issues/html/addFormContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/issues/html/addFormAssets.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.editIssue" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issues/html/editFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issues/html/editFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issues/html/editFormContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/issues/html/editFormAssets.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.issueManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issues/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issues/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issues/html/managementContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/issues/html/managementAssets.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.issuesPage" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issues/html/pageTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issues/html/pageBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issues/html/pageContent.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/issues/html/pageAssets.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.addIssueAction" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueActions/html/addFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issueActions/html/addFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueActions/html/addFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.editIssueAction" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueActions/html/editFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issueActions/html/editFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueActions/html/editFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.managementIssueAction" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueActions/html/managementFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issueActions/html/managementFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueActions/html/managementFormContent.jsp"/>
+    </definition>
+
+
+    <!-- IssueTypes -->
+
+    <definition name="main.fullPage.addIssueType" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueTypes/html/addFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issueTypes/html/addFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueTypes/html/addFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.editIssueType" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueTypes/html/editFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issueTypes/html/editFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueTypes/html/editFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.issueTypesManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueTypes/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/main/issueTypes/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueTypes/html/managementContent.jsp"/>
+    </definition>
+
+
+    <!-- IssueCategories -->
+
+    <definition name="main.fullPage.addIssueCategory" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueCategories/html/addFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issueCategories/html/addFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueCategories/html/addFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.editIssueCategory" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueCategories/html/editFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/issueCategories/html/editFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueCategories/html/editFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.issueCategoriesManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/issueCategories/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/main/issueCategories/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/issueCategories/html/managementContent.jsp"/>
+    </definition>
+
+    <!-- Organizations -->
+
+    <definition name="main.fullPage.addOrganization" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/organizations/html/addFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/organizations/html/addFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/organizations/html/addFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.editOrganization" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/organizations/html/editFormTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/organizations/html/editFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/organizations/html/editFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.organizationsManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/organizations/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/main/organizations/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/organizations/html/managementContent.jsp"/>
+    </definition>
+
+    <!-- ResponsiblePersons -->
+
+    <definition name="main.fullPage.addResponsiblePerson" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/responsiblePersons/html/addFormTitle.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/responsiblePersons/html/addFormAssets.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/responsiblePersons/html/addFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/responsiblePersons/html/addFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.editResponsiblePerson" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/responsiblePersons/html/editFormTitle.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/responsiblePersons/html/editFormAssets.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/responsiblePersons/html/editFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/responsiblePersons/html/editFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.responsiblePersonsManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/responsiblePersons/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/main/responsiblePersons/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/responsiblePersons/html/managementContent.jsp"/>
+    </definition>
+
+    <!-- HelpInfos -->
+
+    <definition name="main.fullPage.saveHelpInfo" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/helpInfos/html/saveFormTitle.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/helpInfos/html/saveAssets.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/helpInfos/html/saveFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/helpInfos/html/saveFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.helpInfoManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/helpInfos/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/helpInfos/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/helpInfos/html/managementContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.helpInfosPage" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/helpInfos/html/pageTitle.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/helpInfos/html/pageAssets.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/main/helpInfos/html/pageBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/helpInfos/html/pageContent.jsp"/>
+    </definition>
+
+    <!-- HelpInfosByOrganization -->
+
+    <definition name="main.fullPage.saveHelpInfoByOrganization" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/helpInfosByOrganization/html/saveFormTitle.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/helpInfosByOrganization/html/saveAssets.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/helpInfosByOrganization/html/saveFormBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/helpInfosByOrganization/html/saveFormContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.helpInfoByOrganizationManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/helpInfosByOrganization/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/view/main/helpInfosByOrganization/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/helpInfosByOrganization/html/managementContent.jsp"/>
+    </definition>
+
+    <definition name="main.fullPage.helpInfosByOrganizationPage" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/helpInfosByOrganization/html/pageTitle.jsp"/>
+        <put-attribute name="customAssets" value="/WEB-INF/view/main/helpInfosByOrganization/html/pageAssets.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/main/helpInfosByOrganization/html/pageBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/helpInfosByOrganization/html/pageContent.jsp"/>
+    </definition>
+
+    <!-- Notifications -->
+
+    <definition name="main.fullPage.notificationsManagement" extends="main.fullPage">
+        <put-attribute name="title" value="/WEB-INF/view/main/notifications/html/managementTitle.jsp"/>
+        <put-attribute name="breadCrumbs"
+                       value="/WEB-INF/view/main/notifications/html/managementBreadCrumbs.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/main/notifications/html/managementContent.jsp"/>
+    </definition>
+
+
+</tiles-definitions>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <include file="migrations/changelog/common-db.changelog-0.0.1.xml"></include>
+    <include file="migrations/changelog/insert-static-user-accounts-db.changelog.xml"></include>
+    <include file="migrations/changelog/common-db.changelog-0.0.2.xml"></include>
+    <include file="migrations/changelog/common-db.changelog-0.0.3.xml"></include>
+    <include file="migrations/changelog/insert-static-issuelabelscategories-and-issuelabels-db.changelog.xml"></include>
+    <include file="migrations/changelog/common-db.changelog-0.0.4.xml"></include>
+    <include file="migrations/changelog/insert-static-smos-db.changelog.xml"></include>
+    <include file="migrations/changelog/common-db.changelog-0.0.5.xml"></include>
+    <include file="migrations/changelog/insert-static-organizations-db.changelog.xml"></include>
+    <include file="migrations/changelog/common-db.changelog-0.0.6.xml"></include>
+    <include file="migrations/changelog/common-db.changelog-0.0.7.xml"></include>
+</databaseChangeLog>

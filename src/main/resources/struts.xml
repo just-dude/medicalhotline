@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!--<constant name="struts.enable.DynamicMethodInvocation" value="false"/>-->
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+    <constant name="struts.devMode" value="${struts.isDevMode}"/>
+    <constant name="struts.i18n.reload" value="${struts.isDevMode}"/>
+    <constant name="struts.configuration.xml.reload" value="${struts.isDevMode}"/>
+
+    <constant name="struts.action.extension" value="html,json"/>
+    <constant name="struts.serve.static" value="true"/>
+    <constant name="struts.serve.static.browserCache" value="false"/>
+    <constant name="struts.multipart.maxSize" value="2000000"/> <!--500MB - 524288000 bytes-->
+    <constant name="struts.multipart.saveDir" value="/files/uploaded"/>
+    <constant name="struts.custom.i18n.resources"
+              value="controller.struts.action.common.validationError.package,controller.struts.action.common.message.package"/>
+
+
+    <include file="/config/struts/base-struts-package.xml"/>
+    <include file="/config/struts/admin/admin.xml"/>
+    <include file="/config/struts/admin/userAccounts.xml"/>
+    <include file="/config/struts/main/main.xml"/>
+    <include file="/config/struts/main/appeals.xml"/>
+    <include file="/config/struts/main/issues.xml"/>
+    <include file="/config/struts/main/issue-actions.xml"/>
+    <include file="/config/struts/main/issue-types.xml"/>
+    <include file="/config/struts/main/issue-categories.xml"/>
+    <include file="/config/struts/main/organizations.xml"/>
+    <include file="/config/struts/main/responsiblePersons.xml"/>
+    <include file="/config/struts/main/help-infos-by-organization.xml"/>
+    <include file="/config/struts/main/help-infos.xml"/>
+    <include file="/config/struts/main/notifications.xml"/>
+    <include file="/config/struts/authentication.xml"/>
+</struts>

@@ -1,0 +1,71 @@
+/*################################################ Tiles ##################################################*/
+.tile{
+	display: inline-block;
+	cursor: default;
+	overflow: hidden;
+	text-shadow:none;
+	width: 180px;
+	height: 180px;
+}
+.tile_main{
+	border-bottom: 1px solid rgba(150,150,150,0.5);
+	text-align: center;
+	height: 180px;
+	width: 180px;
+	overflow:hidden;
+	background: white;
+}
+.inf_for{
+	margin: 8px 0px;
+	font-size: 15px;
+	font-family: 'Trebuchet MS', 'Times New Roman', Times, serif;
+	font-weight:bold;
+	color: rgba(125, 125, 125, 1);
+}
+.tile_sub{
+	background: white;
+	height: 180px;
+	width: 180px;
+	overflow:hidden;
+}
+.head_sub{
+	height: 30px;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'Trebuchet MS', 'Times New Roman', Times, serif;
+	font-weight:bold;
+	color: rgba(125, 125, 125, 1); 
+	padding: 15px 0px 0px 0px;
+}
+.text_sub{
+        height: 120px;
+	font-size: 15px;
+	font-family: 'Trebuchet MS', 'Times New Roman', Times, serif;
+	color: rgba(125, 125, 125, 1); 
+	padding: 0px 10px 12px 10px;
+}
+.to_section{
+	cursor: pointer;
+	height: 33px;
+	background: rgba(112,156,215,1);
+	font-size: 11px;
+	padding: 4px 0px;
+}
+.to_section:hover{
+	background: rgba(57, 95, 182,1);
+}
+.g_t_img{
+	margin: 7px 6px 0px 20px;
+}
+.g_t{
+	color: white;
+	font-size: 12px;
+	text-decoration: none;
+}
+.g_t_sen{
+	color: white;
+	font-size: 12px;
+	text-decoration: none;
+	cursor: default;
+}
+/*################################################ Tiles-End ##################################################*/

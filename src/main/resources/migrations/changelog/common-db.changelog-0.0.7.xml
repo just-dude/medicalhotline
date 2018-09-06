@@ -1,0 +1,90 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Suslov (generated)" id="1534388647174-1">
+        <addColumn tableName="UserAccounts">
+            <column name="DTYPE" type="varchar(31)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="UserAccounts">
+            <column name="organizationId" type="bigint">
+            </column>
+        </addColumn>
+        <addColumn tableName="UserAccounts">
+            <column name="responsiblePersonId" type="bigint">
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="Suslov (generated)" id="1534388647174-2">
+        <addForeignKeyConstraint baseColumnNames="responsiblePersonId" baseTableName="UserAccounts" constraintName="UserAccountsResponsiblePersonIdFK" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="ResponsiblePersons"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1534388647174-3">
+        <addForeignKeyConstraint baseColumnNames="organizationId" baseTableName="UserAccounts" constraintName="UserAccountsOrganizationIdFK" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Organizations"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1534388647174-4">
+        <update tableName="UserAccounts">
+            <column name="DTYPE" value="UserAccount"/>
+        </update>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1535257019775-2">
+        <addPrimaryKey columnNames="issueId, issueTypeId" tableName="Issues_IssueTypes"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1535257019775-3">
+        <addPrimaryKey columnNames="issueId, organizationId" tableName="Issues_Organizations"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1535698150756-1">
+        <createTable tableName="NotificationContents">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="NotificationContentsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="createdDateTime" type="TIMESTAMP"/>
+            <column name="link" type="LONGTEXT"/>
+            <column name="text" type="LONGTEXT"/>
+            <column name="creatorId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1535698150756-2">
+        <createTable tableName="Notifications">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="NotificationsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="hasBeenRead" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="notificationContentId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="targetUserAccountId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Артем (generated)" id="1535257019775-4">
+        <addForeignKeyConstraint baseColumnNames="targetUserAccountId" baseTableName="Notifications" constraintName="NotificationsTargetUserAccountId" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="UserAccounts"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1535257019775-5">
+        <addForeignKeyConstraint baseColumnNames="creatorId" baseTableName="NotificationContents" constraintName="NotificationsCreatorId" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="UserAccounts"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1535257019775-7">
+        <addNotNullConstraint columnDataType="bigint" columnName="issueCategoryId" tableName="Issues"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1535257019775-8">
+        <addNotNullConstraint columnDataType="bigint" columnName="issueTypeId" tableName="Issues_IssueTypes"/>
+    </changeSet>
+
+    <changeSet author="Suslov (generated)" id="1535698150756-5">
+        <addForeignKeyConstraint baseColumnNames="targetUserAccountId" baseTableName="Notifications" constraintName="NotificationsTargetUserAccountIdFK" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="UserAccounts"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1535698150756-6">
+        <addForeignKeyConstraint baseColumnNames="notificationContentId" baseTableName="Notifications" constraintName="NotificationsNotificationContentIdFK" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="NotificationContents"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1535698150756-7">
+        <addForeignKeyConstraint baseColumnNames="creatorId" baseTableName="NotificationContents" constraintName="NotificationContentsCreatorIdFK" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="UserAccounts"/>
+    </changeSet>
+</databaseChangeLog>

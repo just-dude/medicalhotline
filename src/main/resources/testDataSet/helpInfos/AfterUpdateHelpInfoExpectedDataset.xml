@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    <test_medical_hotline.IssueCategories id="1" name="labelCategory1" isSoftDeleted="false" />
+
+    <test_medical_hotline.IssueTypes id="1" name="label1" isSoftDeleted="false" categoryId="1"/>
+    <test_medical_hotline.IssueTypes id="2" name="label2" isSoftDeleted="false" categoryId="1"/>
+
+    <test_medical_hotline.HelpInfos id="2" text="new text" isSoftDeleted="false"/>
+
+</dataset>

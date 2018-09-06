@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Suslov (generated)" id="1530688129867-1">
+        <createTable tableName="EntitiesFieldsPrevStates">
+            <column name="changingDateTime" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entityId" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entityName" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fieldName" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fieldValue" type="LONGTEXT"/>
+            <column name="changerId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1530688129867-2">
+        <addPrimaryKey columnNames="changingDateTime, entityId, entityName, fieldName" constraintName="EntitiesFieldsPrevStatesPK" tableName="EntitiesFieldsPrevStates"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1530688129867-3">
+        <addForeignKeyConstraint baseColumnNames="changerId" baseTableName="EntitiesFieldsPrevStates" constraintName="FKqp2xtpoqbibiwj6sw4o4v9lsd" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="UserAccounts"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1530688129867-4">
+        <renameColumn newColumnName="contactInfo" oldColumnName="phoneNumber" tableName="ResponsiblePersons" columnDataType="VARCHAR(255)"/>
+        <addColumn tableName="ResponsiblePersons">
+            <column name="position" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

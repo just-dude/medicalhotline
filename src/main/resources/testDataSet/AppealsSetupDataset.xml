@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    <test_medical_hotline.UserAccounts id="1" login="admin" hashedPassword="wqqTAGvtnnpirAuyjl/h/AMVsQrBPjxIm0SBl/MlO1I=" salt="KTjUi8L7k7gU74a7H+Gaaw=="
+                                     email="email1@mail.ml"
+                                     name="admin-name" surname="admin-surname" userGroup="Admin" isSoftDeleted="false" />
+    <test_medical_hotline.UserAccounts id="2" login="shiftSupervisor" hashedPassword="wqqTAGvtnnpirAuyjl/h/AMVsQrBPjxIm0SBl/MlO1I=" salt="KTjUi8L7k7gU74a7H+Gaaw=="
+                                     email="email2@mail.ml"
+                                     name="shiftSupervisor-name" surname="shiftSupervisor-surname" userGroup="ShiftSupervisor" isSoftDeleted="false" />
+    <test_medical_hotline.UserAccounts id="3" login="operator" hashedPassword="wqqTAGvtnnpirAuyjl/h/AMVsQrBPjxIm0SBl/MlO1I=" salt="KTjUi8L7k7gU74a7H+Gaaw=="
+                                     email="email2@mail.ml"
+                                     name="operator-name" surname="operator-surname" userGroup="Operator" isSoftDeleted="false" />
+
+    <test_medical_hotline.Appeals id="1" contactPhoneNumber="+7(999)999-99-99" name="name" surname="surname" state="OnTheGo"   creatorId="1" createdDateTime="2016-01-01 00:00:00"  isSoftDeleted="false" />
+
+    <test_medical_hotline.Appeals id="2" contactPhoneNumber="+7(999)999-99-98" name="name-n" surname="surname-n" state="Filling"   creatorId="1" createdDateTime="2016-01-01 00:00:00"  isSoftDeleted="false" />
+
+    <test_medical_hotline.IssueCategories id="1" name="labelCategory1" isSoftDeleted="false" />
+
+    <test_medical_hotline.IssueTypes id="1" name="label1" isSoftDeleted="false" categoryId="1"/>
+    <test_medical_hotline.IssueTypes id="2" name="label2" isSoftDeleted="false" categoryId="1"/>
+
+    <test_medical_hotline.Issues id="1" text="some issue" state="OnTheGo"  isSoftDeleted="false" appealId="1" issueCategoryId="1"/>
+
+    <test_medical_hotline.Issues_IssueTypes issueId="1" issueTypeId="1" />
+
+    <test_medical_hotline.IssueActions id="1" text="some issue action" isFinal="false"  isSoftDeleted="false" issueId="1"  createdDateTime="2016-01-01 00:00:00" creatorId="1" />
+
+    <test_medical_hotline.Organizations id="1" name="organization" address="some address"  contactInfo="contact info" type="MedicalOrganization" isSoftDeleted="false"/>
+
+    <test_medical_hotline.Issues_Organizations issueId="1" organizationId="1" />
+</dataset>

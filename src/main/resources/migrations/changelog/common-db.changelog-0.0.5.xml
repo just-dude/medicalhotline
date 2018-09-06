@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Артем (generated)" id="1526738041-1">
+        <renameTable newTableName="IssueCategories" oldTableName="IssueLabelsCategories"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1526738041-2">
+        <renameTable newTableName="IssueTypes" oldTableName="IssueLabels"/>
+        <renameTable newTableName="Issues_IssueTypes" oldTableName="Issues_IssueLabels"/>
+        <renameColumn newColumnName="issueTypeId" oldColumnName="issueLabelId" tableName="Issues_IssueTypes" columnDataType="BIGINT"/>
+        <dropForeignKeyConstraint baseTableName="IssueTypes" constraintName="IssueLabelsCategoryIdFk"/>
+        <addForeignKeyConstraint baseColumnNames="categoryId" baseTableName="IssueTypes" constraintName="IssueCategoryIdFk"
+                                 deferrable="false" initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueCategories"/>
+
+        <renameColumn newColumnName="issueTypeId" oldColumnName="issueLabelId" tableName="HelpInfoByOrganizations" columnDataType="BIGINT"/>
+        <renameColumn newColumnName="issueTypeId" oldColumnName="issueLabelId" tableName="HelpInfos" columnDataType="BIGINT"/>
+
+        <dropForeignKeyConstraint baseTableName="HelpInfoByOrganizations" constraintName="HelpInfoByOrganizationsIssueLabelId"/>
+        <dropForeignKeyConstraint baseTableName="HelpInfos" constraintName="HelpInfosIssueLabelId"/>
+
+        <addForeignKeyConstraint baseColumnNames="issueTypeId" baseTableName="HelpInfoByOrganizations"
+                                 constraintName="HelpInfoByOrganizationsIssueTypeId" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueTypes"/>
+        <addForeignKeyConstraint baseColumnNames="issueTypeId" baseTableName="HelpInfos"
+                                 constraintName="HelpInfosIssueTypeId" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueTypes"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1526738041-3">
+        <renameColumn newColumnName="issueCategoryId" oldColumnName="issueLabelsCategoryId" tableName="Issues" columnDataType="BIGINT"/>
+        <dropForeignKeyConstraint baseTableName="Issues" constraintName="IssuesIssueLabelsCategoryIdFK"/>
+        <addForeignKeyConstraint baseColumnNames="issueCategoryId" baseTableName="Issues"
+                                 constraintName="IssuesIssueCategoryIdFK" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueCategories"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1526738041-4">
+        <dropForeignKeyConstraint baseTableName="Appeals" constraintName="AppealsSmoIdFk"/>
+        <addForeignKeyConstraint baseColumnNames="smoId" baseTableName="Appeals" constraintName="AppealsSmoIdFk"
+                                 deferrable="false" initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="Organizations"/>
+        <dropTable tableName="Smos"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1526738041-5">
+        <renameTable newTableName="HelpInfosByOrganization" oldTableName="HelpInfoByOrganizations"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1526738041-6">
+        <renameColumn newColumnName="text" oldColumnName="text" tableName="HelpInfosByOrganization" columnDataType="LONGTEXT"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1526738041-7">
+        <renameColumn newColumnName="id" oldColumnName="issueTypeId" tableName="HelpInfos" columnDataType="BIGINT"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1526738041-8">
+        <addColumn tableName="ResponsiblePersons">
+            <column name="phoneNumber" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

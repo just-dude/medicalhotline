@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="issues" namespace="/" extends="medical-hotline-default">
+
+        <action name="add-issue-*" method="{1}" class="controller.struts.action.main.issues.AddIssueAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.addIssue</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.addIssue</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.addIssue</result>
+            <result name="business-rule-violation-html-full-page" type="tiles">main.fullPage.addIssue</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.addIssue
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.addIssue
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.addIssue
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="edit-issue-*" method="{1}" class="controller.struts.action.main.issues.EditIssueAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.editIssue</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.editIssue</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.editIssue</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.editIssue</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.editIssue
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.editIssue
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.editIssue
+            </result>
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+
+        <action name="issue-management-*" method="{1}"
+                class="controller.struts.action.main.issues.IssueManagementAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.issueManagement</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.issueManagement</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.issueManagement</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.issueManagement</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.issueManagement
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.issueManagement
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.issueManagement
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="issues-page-*" method="{1}" class="controller.struts.action.main.issues.IssuesPageAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.issuesPage</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.issuesPage</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.issuesPage</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.issuesPage</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.issuesPage
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.issuesPage
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.issuesPage
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="go-issue-to-notrelevant-state"  class="controller.struts.action.main.issues.GoIssueToNotRelevantState">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="unexpected-error-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+        </action>
+
+        <action name="go-issue-to-impossibletosolve-state"  class="controller.struts.action.main.issues.GoIssueToImpossibleToSolveState">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="unexpected-error-html-full-page" type="redirectAction">
+                <param name="actionName">issue-management</param>
+                <param name="issueId">%{issueId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+        </action>
+
+    </package>
+</struts>

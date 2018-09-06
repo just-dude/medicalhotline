@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+
+   <test_medical_hotline.Appeals contactPhoneNumber="+7(999)999-99-99" state="ImpossibleToSolve"  creatorId="1"
+                                  name="name" surname="surname" patronymic="[null]" omsPolicyNumber="[null]" smoId="[null]" placeOfLiving="[null]"
+                                  createdDateTime="2016-01-01 00:00:00"  isSoftDeleted="false" causeOfTransitionToFinalState="[null]"/>
+    <test_medical_hotline.Appeals contactPhoneNumber="+7(999)999-99-98" name="name-n" surname="surname-n" patronymic="[null]" omsPolicyNumber="[null]" smoId="[null]"
+                                  placeOfLiving="[null]" state="Filling" causeOfTransitionToFinalState="[null]"  creatorId="1" createdDateTime="2016-01-01 00:00:00"  isSoftDeleted="false" />
+
+
+
+    <test_medical_hotline.Issues text="some issue" state="ImpossibleToSolve"  isSoftDeleted="false" appealId="1" causeOfTransitionToFinalState="some cause of transition"  issueCategoryId="1"/>
+
+    <test_medical_hotline.IssueActions text="some issue action" isFinal="false"  isSoftDeleted="false" issueId="1" createdDateTime="2016-01-01 00:00:00" creatorId="1" />
+    <test_medical_hotline.IssueActions text="Some action 1" isFinal="false"  isSoftDeleted="false" issueId="1" createdDateTime="2016-01-01 00:00:00" creatorId="1" />
+    <test_medical_hotline.IssueActions text="Some action 2" isFinal="true"  isSoftDeleted="false" issueId="1" createdDateTime="2016-01-01 00:00:00" creatorId="1" />
+
+</dataset>

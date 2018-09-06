@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+
+    <test_medical_hotline.UserAccounts id="1" login="login1" hashedPassword="hashedPassword" salt="salt"
+                                     email="email1@mail.ml"
+                                     name="name" surname="surname" userGroup="Admin" isSoftDeleted="false" />
+    <test_medical_hotline.UserAccounts id="2" login="login2" hashedPassword="hashedPassword" salt="salt"
+                                     email="email2@mail.ml"
+                                     name="name" surname="surname" userGroup="Admin" isSoftDeleted="false" />
+    <test_medical_hotline.UserAccounts id="3" login="login3" hashedPassword="hashedPassword" salt="salt"
+                                     email="email3@mail.ml"
+                                     name="name" surname="surname" userGroup="Operator" isSoftDeleted="false" />
+
+</dataset>

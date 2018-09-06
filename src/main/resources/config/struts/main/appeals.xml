@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="appeals" namespace="/" extends="medical-hotline-default">
+
+        <action name="add-appeal-main-info-*" method="{1}"
+                class="controller.struts.action.main.appeals.AddAppealMainInfoAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appeal.id}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="partially-success-html-full-page" type="tiles">main.fullPage.addAppealMainInfo</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.addAppealMainInfo</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.addAppealMainInfo</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.addAppealMainInfo</result>
+            <result name="business-rule-violation-html-full-page" type="tiles">main.fullPage.addAppealMainInfo</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.addAppealMainInfo
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.addAppealMainInfo
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.addAppealMainInfo
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="edit-appeal-main-info-*" method="{1}"
+                class="controller.struts.action.main.appeals.EditAppealMainInfoAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appeal.id}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="partially-success-html-full-page" type="tiles">main.fullPage.editAppealMainInfo</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.editAppealMainInfo</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.editAppealMainInfo</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.editAppealMainInfo</result>
+            <result name="business-rule-violation-html-full-page" type="tiles">main.fullPage.editAppealMainInfo</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.editAppealMainInfo
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.editAppealMainInfo
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.editAppealMainInfo
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+
+        <action name="appeal-management-*" method="{1}" class="controller.struts.action.main.appeals.AppealManagementAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.appealManagement</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.appealManagement</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.appealManagement</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.appealManagement</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.appealManagement
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.appealManagement
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.appealManagement
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="appeals-page-*" method="{1}" class="controller.struts.action.main.appeals.AppealsPageAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.appealsPage</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.appealsPage</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.appealsPage</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.appealsPage</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.appealsPage
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.appealsPage
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.appealsPage
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="go-appeal-to-canceled-state"  class="controller.struts.action.main.appeals.GoAppeaToCanceledStateAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+             <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionErrors().get(0)}</param>
+            </result>
+             <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                 <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                 <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+             <result name="unexpected-error-html-full-page" type="redirectAction">
+                 <param name="actionName">appeal-management</param>
+                 <param name="appealId">%{appealId}</param>
+                 <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                 <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+        </action>
+
+        <action name="go-appeal-to-onthego-state"  class="controller.struts.action.main.appeals.GoAppealToTheOnTheGoState">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="unexpected-error-html-full-page" type="redirectAction">
+                <param name="actionName">appeal-management</param>
+                <param name="appealId">%{appealId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+        </action>
+
+    </package>
+</struts>

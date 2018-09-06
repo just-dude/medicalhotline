@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Артем (generated)" id="1524324895617-1">
+        <createTable tableName="HelpInfoByOrganizations">
+            <column name="issueLabelId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="organizationId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="text" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-2">
+        <createTable tableName="HelpInfos">
+            <column name="issueLabelId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="text" type="LONGTEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-3">
+        <createTable tableName="Organizations">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="OrganizationsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="address" type="LONGTEXT"/>
+            <column name="contactInfo" type="LONGTEXT"/>
+            <column name="seniorOfficialName" type="VARCHAR(255)"/>
+            <column name="seniorOfficialPatronymic" type="VARCHAR(255)"/>
+            <column name="seniorOfficialSurname" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-4">
+        <createTable tableName="ResponsiblePersons">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="ResponsiblePersonsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="patronymic" type="VARCHAR(255)"/>
+            <column name="priority" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="organizationId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="surname" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-5">
+        <addPrimaryKey columnNames="issueLabelId, organizationId" constraintName="HelpInfoByOrganizationsPK"
+                       tableName="HelpInfoByOrganizations"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-6">
+        <addPrimaryKey columnNames="issueLabelId" constraintName="HelpInfosPK" tableName="HelpInfos"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-7">
+        <addForeignKeyConstraint baseColumnNames="organizationId" baseTableName="HelpInfoByOrganizations"
+                                 constraintName="HelupdatepInfoByOrganizationsOrganizationId" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="Organizations"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-8">
+        <addForeignKeyConstraint baseColumnNames="issueLabelId" baseTableName="HelpInfoByOrganizations"
+                                 constraintName="HelpInfoByOrganizationsIssueLabelId" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueLabels"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-9">
+        <addForeignKeyConstraint baseColumnNames="issueLabelId" baseTableName="HelpInfos"
+                                 constraintName="HelpInfosIssueLabelId" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueLabels"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1524533240736-17">
+        <addForeignKeyConstraint baseColumnNames="organizationId" baseTableName="ResponsiblePersons"
+                                 constraintName="ResponsiblePersonsOrganizationId" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="Organizations"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-10">
+        <addNotNullConstraint columnDataType="bigint" columnName="appealId" tableName="Issues"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-11">
+        <addNotNullConstraint columnDataType="bigint" columnName="categoryId" tableName="IssueLabels"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-12">
+        <addNotNullConstraint columnDataType="bigint" columnName="creatorId" tableName="Appeals"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-13">
+        <addNotNullConstraint columnDataType="bigint" columnName="creatorId" tableName="IssueActions"/>
+    </changeSet>
+    <changeSet author="Артем (generated)" id="1524324895617-14">
+        <addNotNullConstraint columnDataType="bigint" columnName="issueId" tableName="IssueActions"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1524625736725-1">
+        <createTable tableName="Issues_Organizations">
+            <column name="issueId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="organizationId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1524625736725-2">
+        <addColumn tableName="Issues">
+            <column name="issueLabelsCategoryId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1524625736725-3">
+        <addForeignKeyConstraint baseColumnNames="issueLabelsCategoryId" baseTableName="Issues"
+                                 constraintName="IssuesIssueLabelsCategoryIdFK" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueLabelsCategories"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1524625736725-4">
+        <addForeignKeyConstraint baseColumnNames="issueId" baseTableName="Issues_Organizations"
+                                 constraintName="Issues_OrganizationsIssueIdFK" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Issues"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1524625736725-5">
+        <addForeignKeyConstraint baseColumnNames="organizationId" baseTableName="Issues_Organizations"
+                                 constraintName="Issues_OrganizationsOrganizationIdFK" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="Organizations"/>
+    </changeSet>
+</databaseChangeLog>

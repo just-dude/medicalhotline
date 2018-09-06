@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="insert-static-smos" author="SuslovAI">
+        <insert tableName="Smos">
+            <column name="id" value="75001"/>
+            <column name="name" value="ГК ЗАБАЙКАЛМЕДСТРАХ"/>
+        </insert>
+        <insert tableName="Smos">
+            <column name="id" value="75002"/>
+            <column name="name" value="ОАО СМК ВИТА"/>
+        </insert>
+        <insert tableName="Smos">
+            <column name="id" value="75003"/>
+            <column name="name" value="ФИЛИАЛ ЧИТИНСКИЙ АО СТРАХОВАЯ ГРУППА СПАССКИЕ ВОРОТА-М"/>
+        </insert>
+        <insert tableName="Smos">
+            <column name="id" value="75004"/>
+            <column name="name" value="АО СТРАХОВАЯ КОМПАНИЯ СОГАЗ-МЕД"/>
+        </insert>
+        <insert tableName="Smos">
+            <column name="id" value="75005"/>
+            <column name="name" value="ЧИТИНСКИЙ ФИЛИАЛ ОАО РОСНО-МС"/>
+        </insert>
+        <insert tableName="Smos">
+            <column name="id" value="75006"/>
+            <column name="name" value="АО МСО НАДЕЖДА"/>
+        </insert>
+        <insert tableName="Smos">
+            <column name="id" value="75007"/>
+            <column name="name" value="ООО СК ИНГОССТРАХ-М"/>
+        </insert>
+        <insert tableName="Smos">
+            <column name="id" value="75999"/>
+            <column name="name" value="Инобластная СМО"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

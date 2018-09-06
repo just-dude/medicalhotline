@@ -1,0 +1,56 @@
+.clientSideValidationError, .serverSideValidationError{    
+    display: block;
+    color: #d82a2a;
+    font-size: 13px;
+    font-family: 'Trebuchet MS','Times New Roman',Times,serif;
+}
+
+.serverSideInvalidFieldValue{
+    border: 1px solid rgba(216, 42, 42, 0.5) !important;
+}
+
+.clientSideInvalidFieldValue{
+    border: 1px solid rgba(216, 42, 42, 0.5);
+}
+
+.clientSideValidFieldValue{
+    border: 1px solid rgba(112,156,215,1);
+}
+
+.clientSideUnvalidatedFormField{
+    border: 1px solid #ccc;
+}
+
+.formError{
+    margin: 3px 0px;
+    color: #d82a2a;
+    font-size: 13px;
+    font-family: 'Trebuchet MS','Times New Roman',Times,serif;
+}
+
+#formProcessingResultMessage{
+    margin: 10px 0px;
+    font-size: 13px;
+}
+
+.errorText{
+    color: #d82a2a;
+    font-family: 'Trebuchet MS','Times New Roman',Times,serif;
+}
+
+.successText{
+    color: #8BC34A;
+    font-family: 'Trebuchet MS','Times New Roman',Times,serif;
+}
+
+.loadingProcessButton{
+    background-image: url(./img/loading_indicator.gif);
+    background-repeat: no-repeat;
+    min-width: 95px;
+    background-position: center center;
+}
+.loadingProcessButton:hover{
+    background-image: url(./img/loading_indicator.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}

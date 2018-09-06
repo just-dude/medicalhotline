@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Suslov (generated)" id="1522896708436-1">
+        <createTable tableName="Appeals">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="AppealsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="causeOfTransitionToFinalState" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="omsPolicyNumber" type="VARCHAR(255)"/>
+            <column name="patronymic" type="VARCHAR(255)"/>
+            <column name="placeOfLiving" type="VARCHAR(255)"/>
+            <column name="surname" type="VARCHAR(255)"/>
+            <column name="contactPhoneNumber" type="VARCHAR(255)"/>
+            <column name="createdDateTime" type="TIMESTAMP"/>
+            <column name="state" type="VARCHAR(255)"/>
+            <column name="smoId" type="BIGINT"/>
+            <column name="creatorId" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-2">
+        <createTable tableName="IssueActions">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="IssueActionsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="createdDateTime" type="TIMESTAMP"/>
+            <column name="isFinal" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="text" type="LONGTEXT"/>
+            <column name="creatorId" type="BIGINT"/>
+            <column name="issueId" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-3">
+        <createTable tableName="IssueLabels">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="IssueLabelsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-4">
+        <createTable tableName="Issues">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="IssuesPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="causeOfTransitionToFinalState" type="VARCHAR(255)"/>
+            <column name="state" type="VARCHAR(255)"/>
+            <column name="text" type="LONGTEXT"/>
+            <column name="appealId" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-5">
+        <createTable tableName="Issues_IssueLabels">
+            <column name="issueId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="issueLabelId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-6">
+        <createTable tableName="Smos">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="SmosPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-7">
+        <createTable tableName="UserAccounts">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="UserAccountsPK"/>
+            </column>
+            <column name="isSoftDeleted" type="BIT"/>
+            <column name="hashedPassword" type="VARCHAR(255)"/>
+            <column name="login" type="VARCHAR(255)"/>
+            <column name="salt" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="patronymic" type="VARCHAR(255)"/>
+            <column name="surname" type="VARCHAR(255)"/>
+            <column name="userGroup" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-8">
+        <addForeignKeyConstraint baseColumnNames="issueId" baseTableName="Issues_IssueLabels"
+                                 constraintName="FK3x2pegufb1wqdqmasb5tn206a" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Issues"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-9">
+        <addForeignKeyConstraint baseColumnNames="issueLabelId" baseTableName="Issues_IssueLabels"
+                                 constraintName="FKqlu7khj3ig1b7x7oe4b4c3byr" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="IssueLabels"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-10">
+        <addForeignKeyConstraint baseColumnNames="appealId" baseTableName="Issues" constraintName="id"
+                                 deferrable="false" initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="Appeals"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-11">
+        <addForeignKeyConstraint baseColumnNames="issueId" baseTableName="IssueActions" constraintName="IssueActionsIssueIdFk"
+                                 deferrable="false" initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="Issues"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-12">
+        <addForeignKeyConstraint baseColumnNames="creatorId" baseTableName="Appeals" constraintName="AppealsCreatorIdFk"
+                                 deferrable="false" initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="UserAccounts"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-13">
+        <addForeignKeyConstraint baseColumnNames="creatorId" baseTableName="IssueActions" constraintName="IssueActionsCreatorIdFk"
+                                 deferrable="false" initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="UserAccounts"/>
+    </changeSet>
+    <changeSet author="Suslov (generated)" id="1522896708436-14">
+        <addForeignKeyConstraint baseColumnNames="smoId" baseTableName="Appeals" constraintName="AppealsSmoIdFk"
+                                 deferrable="false" initiallyDeferred="false" referencedColumnNames="id"
+                                 referencedTableName="Smos"/>
+    </changeSet>
+</databaseChangeLog>

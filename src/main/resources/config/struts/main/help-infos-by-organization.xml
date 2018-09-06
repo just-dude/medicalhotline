@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="helpinfos-by-organization" namespace="/" extends="medical-hotline-default">
+
+        <action name="save-helpinfo-by-organization-*" method="{1}" class="controller.struts.action.main.helpInfosByOrganization.SaveHelpInfoByOrganizationAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfo-by-organization-management</param>
+                <param name="issueTypeId">%{issueTypeId}</param>
+                <param name="organizationId">%{organizationId}</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+            </result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.saveHelpInfoByOrganization</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.saveHelpInfoByOrganization</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.saveHelpInfoByOrganization</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.saveHelpInfoByOrganization
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.saveHelpInfoByOrganization
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.saveHelpInfoByOrganization
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="remove-helpinfo-by-organization" class="controller.struts.action.main.helpInfosByOrganization.RemoveHelpInfoByOrganizationAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-by-organization-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-by-organization-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-by-organization-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-by-organization-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-by-organization-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="unexpected-error-html-full-page" type="redirectAction">
+                <param name="actionName">helpinfos-by-organization-page</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+        </action>
+
+        <action name="helpinfo-by-organization-management" class="controller.struts.action.main.helpInfosByOrganization.HelpInfoByOrganizationManagementAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.helpInfoByOrganizationManagement</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.helpInfoByOrganizationManagement</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.helpInfoByOrganizationManagement</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.helpInfoByOrganizationManagement</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.helpInfoByOrganizationManagement
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfoByOrganizationManagement
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfoByOrganizationManagement
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="helpinfos-by-organization-page"
+                class="controller.struts.action.main.helpInfosByOrganization.HelpInfosByOrganizationPageAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.helpInfosByOrganizationPage</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.helpInfosByOrganizationPage</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.helpInfosByOrganizationPage
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfosByOrganizationPage
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.helpInfosByOrganizationPage
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+
+    </package>
+</struts>

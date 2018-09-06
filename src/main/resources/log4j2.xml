@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Properties>
+        <Property name="baseDir">${log.baseDir}</Property>
+        <Property name="commonLevel">${log.commonLevel}</Property>
+        <Property name="detailedLevel">${log.detailedLevel}</Property>
+        <Property name="superDetailedLevel">${log.superDetailedLevel}</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) %marker - %m%n"/>
+        </Console>
+        <RollingFile name="ApplicationLog" fileName="${baseDir}/app/app.log"
+                     filePattern="${baseDir}/app/$${date:MM-yyyy}/app-%d{dd-MM-yyyy}.log">
+            <PatternLayout>
+                <Pattern>%d %p %c [%X,%t] %equals{[%marker]}{[]}{} %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="2"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.opensymphony.xwork2" level="${commonLevel}"/>
+        <Logger name="org.apache.struts2" level="${commonLevel}"/>
+        <Logger name="org.springframework" level="${commonLevel}"/>
+        <Logger name="org.hibernate" level="${commonLevel}"/>
+        <Logger name="org.dbunit" level="${commonLevel}"/>
+        <Logger name="org.apache.commons.dbcp.BasicDataSource" level="${commonLevel}"/>
+        <Logger name="org.apache.tiles" level="${commonLevel}"/>
+        <Logger name="org.apache.shiro" level="${commonLevel}"/>
+        <Logger name="org.springframework.transaction" level="${commonLevel}"/>
+
+        <Logger name="common" level="${detailedLevel}"/>
+        <Logger name="controller.struts" level="${detailedLevel}"/>
+        <Logger name="dataAccess" level="${detailedLevel}"/>
+        <Logger name="domain" level="${detailedLevel}" />
+        <Logger name="javaConfig" level="${detailedLevel}" />
+
+        <Root level="${commonLevel}">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="ApplicationLog"/>
+        </Root>
+    </Loggers>
+</Configuration>

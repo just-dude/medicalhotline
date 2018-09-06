@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+
+    <test_medical_hotline.UserAccounts login="login1" email="email1@mail.ml" name="name" surname="surname" userGroup="Admin" isSoftDeleted="false" />
+    <test_medical_hotline.UserAccounts login="login2" email="email2@mail.ml" name="name" surname="surname" userGroup="Admin" isSoftDeleted="false" />
+    <test_medical_hotline.UserAccounts login="login3" email="email3@mail.ml" name="name" surname="surname" userGroup="Operator" isSoftDeleted="false" />
+    <test_medical_hotline.UserAccounts login="newUserLogin" email="email@email.ru" name="newUserName"
+                                     surname="newUserSurname"
+                                     userGroup="Operator" isSoftDeleted="false" />
+
+</dataset>

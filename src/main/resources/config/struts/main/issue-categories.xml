@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+
+    <package name="issue-categories" namespace="/" extends="medical-hotline-default">
+
+        <action name="add-issuecategory-*" method="{1}" class="controller.struts.action.main.issueCategories.AddIssueCategoryAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.addIssueCategory</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.addIssueCategory</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.addIssueCategory</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.addIssueCategory</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.addIssueCategory
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.addIssueCategory
+            </result>
+
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.addIssueCategory
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="edit-issuecategory-*" method="{1}" class="controller.struts.action.main.issueCategories.EditIssueCategoryAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.editIssueCategory</result>
+            <result name="input-html-full-page" type="tiles">main.fullPage.editIssueCategory</result>
+            <result name="invalid-user-input-html-full-page" type="tiles">main.fullPage.editIssueCategory</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.editIssueCategory</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.editIssueCategory
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.editIssueCategory
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.editIssueCategory
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+        <action name="remove-issuecategory" class="controller.struts.action.main.issueCategories.RemoveIssueCategoryAction">
+            <result name="success-html-full-page" type="redirectAction">
+                <param name="actionName">issuecategories-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="error-html-full-page" type="redirectAction">
+                <param name="actionName">issuecategories-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="business-rule-violation-html-full-page" type="redirectAction">
+                <param name="actionName">issuecategories-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="resource-not-exists-html-full-page" type="redirectAction">
+                <param name="actionName">issuecategories-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="authorization-error-html-full-page" type="redirectAction">
+                <param name="actionName">issuecategories-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+            <result name="unexpected-error-html-full-page" type="redirectAction">
+                <param name="actionName">issuecategories-management</param>
+                <param name="prevActionMessage">%{getActionMessages().get(0)}</param>
+                <param name="prevActionError">%{getActionErrors().get(0)}</param>
+                <param name="pageNumber">%{#parameters.pageNumber}</param>
+                <param name="locale">%{#request.locale}</param>
+            </result>
+        </action>
+
+        <action name="issuecategories-management"
+                class="controller.struts.action.main.issueCategories.IssueCategoriesManagementAction">
+            <result name="success-html-full-page" type="tiles">main.fullPage.issueCategoriesManagement</result>
+            <result name="error-html-full-page" type="tiles">main.fullPage.issueCategoriesManagement</result>
+            <result name="resource-not-exists-html-full-page" type="tiles">
+                main.fullPage.issueCategoriesManagement
+            </result>
+            <result name="data-integrity-violation-html-full-page" type="tiles">
+                main.fullPage.issueCategoriesManagement
+            </result>
+            <result name="unchanging-content-constraint-violation-html-full-page" type="tiles">
+                main.fullPage.issueCategoriesManagement
+            </result>
+
+            <result name="authorization-error-html-full-page" type="tiles">main.fullPage.authorizationError</result>
+            <result name="unexpected-error" type="tiles">main.fullPage.defaultError</result>
+        </action>
+
+
+    </package>
+</struts>
